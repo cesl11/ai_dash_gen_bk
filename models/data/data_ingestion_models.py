@@ -1,6 +1,12 @@
 "Defines the data ingestion notions from various sources."
+
+import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
+
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
+from exceptions.excp import UnknownDataSource
 
 # Credentials classes
 @dataclass
@@ -58,7 +64,7 @@ class DataSourceFactory:
         kclass = cls._registry.get(config.sourceType)
         if not kclass:
             availableSources = list(cls._registry.keys())
-            raise ValueError(f"Unknown data source: '{config.sourceType}'."
+            raise UnknownDataSource(f"Data source not available: '{config.sourceType}'."
                              f"Supported sources: '{availableSources}'")
         return kclass()
     

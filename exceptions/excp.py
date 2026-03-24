@@ -1,4 +1,16 @@
 "Basic exceptions"
 
+# --- Tools arg validations
 class WrongArgTypeError(Exception):
-    pass
+    ...
+
+class UnmatchingLabelAndDataArraySize(Exception):
+    ...
+    
+# --- Chart errors
+class UnknownChartType(Exception):
+    ...
+    
+# --- Data source errors
+class UnknownDataSource(Exception):
+    ...
