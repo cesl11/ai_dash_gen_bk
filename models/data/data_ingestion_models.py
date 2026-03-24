@@ -89,7 +89,7 @@ class ExcelFile(DataSource):
     def showDataStructure(self) -> Dict:
         """
         Exposes how data is arranged in the Excel source using the
-        Chain-of-Spreadsheet (CoS) pipeline from SpreadsheetLLM.
+        `Chain-of-Spreadsheet (CoS)` pipeline from `SpreadsheetLLM`.
 
         Returns a structured summary dict with:
         - encoding: full SheetCompressor output (compressed representation)

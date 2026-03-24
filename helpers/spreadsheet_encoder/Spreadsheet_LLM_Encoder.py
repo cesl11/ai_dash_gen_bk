@@ -126,7 +126,7 @@ def spreadsheet_llm_encode(excel_path, output_path=None, k=2, vanilla=False):
                 key = json.dumps({"type": sem_type, "nfs": nfs}, sort_keys=True)
                 type_nfs_map[key].append(cell_ref)
 
-        aggregated_formats = aggregate_regions_dfs(sheet, type_nfs_map)
+        aggregated_formats = aggregate_formats(sheet, type_nfs_map)
         logger.info(
             f"Aggregated {len(aggregated_formats)} format regions"
         )
@@ -137,7 +137,7 @@ def spreadsheet_llm_encode(excel_path, output_path=None, k=2, vanilla=False):
             for fmt, cells in type_nfs_map.items()
             if json.loads(fmt).get("type") in ["numeric", "integer", "float"]
         }
-        numeric_ranges = aggregate_regions_dfs(sheet, numeric_map)
+        numeric_ranges = aggregate_formats(sheet, numeric_map)
         logger.info(f"Clustered {len(numeric_ranges)} numeric format ranges")
 
         sheet_encoding = {
