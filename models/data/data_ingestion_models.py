@@ -140,8 +140,7 @@ class ExcelFile(DataSource):
 
         return structure
     
-    # ── Private helper: two-stage CoS QA ──────────────────────────────────────────
-
+    # ── Private helper: two-stage CoS QA ────
     def _cos_query(self, query: str) -> str:
         """
         Runs the full Chain-of-Spreadsheet two-stage pipeline for a given query.

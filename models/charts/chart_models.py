@@ -9,6 +9,7 @@ from aux.default_colors import defaultBgColors, defaultBorderColors
 from aux.decorators import validate
 from exceptions.arg_validation_exceptions import UnmatchingLabelAndDataArraySize
 from exceptions.chart_exceptions import UnknownChartType
+from datetime import datetime
 from typing import List
 
 # Abstract interfaces
@@ -24,7 +25,7 @@ class BarChart(Chart):
     def getConfig(self, 
                     chartTitle: str,
                     labels: List[str], 
-                    dataArray: List[float], 
+                    dataArray: List[float | int | datetime],
                     backgroundColors: List[str] = defaultBgColors, 
                     borderColors: List[str] = defaultBorderColors, 
                     borderWidth: int = 1, beginAtZeroInY: bool = True) -> dict:
