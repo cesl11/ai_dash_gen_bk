@@ -7,7 +7,8 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
 from abc import ABC, abstractmethod
 from aux.default_colors import defaultBgColors, defaultBorderColors
 from aux.decorators import validate
-from exceptions.excp import UnmatchingLabelAndDataArraySize, UnknownChartType
+from exceptions.arg_validation_exceptions import UnmatchingLabelAndDataArraySize
+from exceptions.chart_exceptions import UnknownChartType
 from typing import List
 
 # Abstract interfaces
@@ -77,7 +78,7 @@ class ChartFactory:
         """Creates a new source instance for working with."""
         kclass = cls._registry.get(chartType)
         if not kclass:
-            availableSources = list(cls._registry.keys())
+            availableCharts = list(cls._registry.keys())
             raise UnknownChartType(f"Chart type not available: '{chartType}'."
-                             f"Supported charts: '{availableSources}'")
+                             f"Supported charts: '{availableCharts}'")
         return kclass()

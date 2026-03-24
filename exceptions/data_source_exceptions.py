@@ -1,0 +1,3 @@
+# --- Data source errors
+class UnknownDataSource(Exception):
+    ...

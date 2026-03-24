@@ -1,6 +1,6 @@
 from beartype import beartype
 from beartype.roar import BeartypeCallHintParamViolation
-from exceptions.excp import WrongArgTypeError
+from exceptions.arg_validation_exceptions import WrongArgTypeError
 
 def validate(func):
     wrapped = beartype(func)
