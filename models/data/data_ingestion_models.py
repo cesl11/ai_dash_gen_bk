@@ -69,7 +69,7 @@ class ExcelFile(DataSource):
     def __init__(self, path: str, tokenLimit: int = 4096):
         self._path = path
         self._tokenLimit = tokenLimit
-        self._encoding = Optional[dict] = None
+        self._encoding: Optional[dict] = None
     
     def connect(self, config=None) -> None:
         """Encodes the spreadsheet with SheetCompressor on connect."""
