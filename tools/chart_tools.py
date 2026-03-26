@@ -4,11 +4,11 @@ import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
 
-from langchain_core.tools import tool
+from langchain_core.tools import Tool
 from models.charts.chart_models import ChartFactory
 
 # --- Here starts
-@tool()
+# @tool()
 def createChart(chartType: str): 
     # AQUÍ lo que queda pendiente es pensar COMO el modelo pasará los argumentos, que van a variar según el tipo de dato.
     # :P Se necesita implementar alguna lógica de validación

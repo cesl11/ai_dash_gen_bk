@@ -4,13 +4,10 @@ import os
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
 
-from attrs import define
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from exceptions.data_source_exceptions import UnknownDataSource
-import logging
 
-logger = logging.getLogger(__name__)
 
 # Credentials classes
 @dataclass
