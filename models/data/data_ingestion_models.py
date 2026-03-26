@@ -6,7 +6,10 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
 
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
-from exceptions.data_source_exceptions import UnknownDataSource
+from attrs import define
+from typing import Any
+from pathlib import Path
+from exceptions.data.data_source_exceptions import UnknownDataSource
 
 
 # Credentials classes
@@ -48,7 +51,21 @@ class DataSource(ABC):
     
 
 # Distinc data sources implementations   
-# ...
+@define
+class ExcelFile(DataSource):
+    filepath: str
+    
+    # def connect(self, config=None) -> True | Exception:
+    #     path = Path(self.filepath)
+    #     if not path.exists():
+    #         raise FileNotFoundError(f"Excel file not founded: {self.filepath}. Try again with other file.")
+    #     if not path.is_file():
+    #         raise TypeError(f"Given path is not a file: {self.filepath}. Try again with other file.")
+    #     if path.
+    #     return True
+
+    def fetch(self) -> Any:
+        ...
 
 # Main class 
 class DataSourceFactory:

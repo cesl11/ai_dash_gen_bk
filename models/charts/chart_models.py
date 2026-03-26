@@ -5,10 +5,10 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
 
 from abc import ABC, abstractmethod
-from aux.default_colors import defaultBgColors, defaultBorderColors
-from aux.decorators import validate
-from exceptions.arg_validation_exceptions import UnmatchingLabelAndDataArraySize
-from exceptions.chart_exceptions import UnknownChartType
+from aux.default_settings.default_colors import defaultBgColors, defaultBorderColors
+from aux.validators.args_validation.decorators import validate
+from exceptions.validations.arg_validation_exceptions import UnmatchingLabelAndDataArraySize
+from exceptions.charts.chart_exceptions import UnknownChartType
 from datetime import datetime
 from typing import List
 

@@ -1,1 +1,1 @@
-from .default_colors import defaultBgColors, defaultBorderColors
+from .default_settings.default_colors import defaultBgColors, defaultBorderColors
