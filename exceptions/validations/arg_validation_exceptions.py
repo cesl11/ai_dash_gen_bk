@@ -1,5 +1,4 @@
-class WrongArgTypeError(Exception):
-    ...
+"Arg type errors."
 
-class UnmatchingLabelAndDataArraySize(Exception):
+class WrongArgTypeError(Exception):
     ...
